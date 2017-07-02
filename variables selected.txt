@@ -1,0 +1,16 @@
+1 Age
+2 Sex
+3 Educ
+4 NACCBMI
+5 Smoking     Karelys
+6 Alcohol
+7 NACCUDSD
+8 CVHATT
+9 Diabetes
+10 CBSTROKE  Anani
+11DEP2YRS
+12 HYPERTEN
+13 NACCAPOE
+14 NACCNE4S
+15 NPTHAL    Mingjian
+
