@@ -19,4 +19,4 @@ Data_Subset <- select (NACC,NACCADC,NACCID,VISITYR,BIRTHYR,SEX,EDUC,INDEPEND,RES
 Data_Subset <- mutate(Data_Subset, Age = VISITYR - BIRTHYR)
 
 # Change 'SEX' numeric variable to be a factor
-Data_Subset$SEX <- factor(Data_Subset$SEX, levels = c(0, 1), labels = c("Female", "Male"))
+Data_Subset$SEX <- factor(Data_Subset$SEX, levels = c(1, 2), labels = c("Male", "Female"))
