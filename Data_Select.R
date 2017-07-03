@@ -20,3 +20,11 @@ Data_Subset <- mutate(Data_Subset, Age = VISITYR - BIRTHYR)
 
 # Change 'SEX' numeric variable to be a factor
 Data_Subset$SEX <- factor(Data_Subset$SEX, levels = c(1, 2), labels = c("Male", "Female"))
+
+# Cleaning EDUC variable. 
+# Higher educational level: doctorate = 20 to 25. Excludes records with higher values
+Data_Subset <- filter(Data_Subset, Data_Subset$EDUC <= 25)
+
+# Change 'EDUC' numeric variable to be a factor
+Data_Subset$EDUC <- cut(Data_Subset$EDUC, breaks=c(0, 11, 15, 17, 19, 25), labels=c("Below high school or GRE", "high school or GRE", "bachelor’s degree", "master's degree", "doctorate"))
+
