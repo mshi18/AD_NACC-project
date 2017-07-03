@@ -52,3 +52,13 @@ Data_Subset$SMOKYRS[Data_Subset$SMOKYRS == 88] <- "NA"
 Data_Subset$SMOKYRS[Data_Subset$SMOKYRS == 99] <- "Unknown"
 Data_Subset$SMOKYRS[Data_Subset$SMOKYRS == -4] <- "Unknown"
 
+# Change 'PACKSPER' numeric variable to be a factor
+Data_Subset$PACKSPER[Data_Subset$PACKSPER == 9] <- "Unknown"
+Data_Subset$PACKSPER[Data_Subset$PACKSPER == -4] <- "Unknown"
+Data_Subset$PACKSPER <- factor(Data_Subset$PACKSPER, levels = c(0, 1, 2, 3, 4, 5, 8, "Unknown"), labels = c("No reported cigarette use", "1 cigarette to less than 1/2 pack", "½ pack to less than 1 pack", "1 pack to 1½ packs", "1½ packs to 2 packs", "More than two packs", "NA", "Unknown"))
+
+# QUITSMOK
+Data_Subset$QUITSMOK[Data_Subset$QUITSMOK == 888] <- "No significant smoking history"
+Data_Subset$QUITSMOK[Data_Subset$QUITSMOK == 999] <- "Unknown"
+Data_Subset$QUITSMOK[Data_Subset$QUITSMOK == -4] <- "Unknown"
+
