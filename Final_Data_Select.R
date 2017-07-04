@@ -12,7 +12,7 @@ NACC <- read.csv(file = 'NACC.csv',
                  header = TRUE,
                  stringsAsFactors = FALSE)
 # New data set from Variable selection
-Data_Subset <- select (NACC,NACCADC,NACCID,SEX,EDUC,NACCBMI,TOBAC30,TOBAC100,SMOKYRS,PACKSPER,QUITSMOK,ALCOHOL,NACCUDSD,CVHATT,DIABETES,CBSTROKE,HYPERTEN,DEP2YRS,NACCAPOE,NACCNE4S,NPTHAL)
+Data_Subset <- select (NACC,NACCADC,VISITYR,NACCID,BIRTHYR,SEX,EDUC,NACCBMI,TOBAC30,TOBAC100,SMOKYRS,PACKSPER,QUITSMOK,ALCOHOL,NACCUDSD,CVHATT,DIABETES,CBSTROKE,HYPERTEN,DEP2YRS,NACCAPOE,NACCNE4S,NPTHAL)
 
 
 # Adding 'AGE' variable calculated from VISITYR and BIRTHYR variables
@@ -104,3 +104,5 @@ Data_Subset$NPTHAL <- factor(Data_Subset$NPTHAL,levels=c(0,1,2,3,4,5),labels=c("
 Data_Subset$NPTHAL[Data_Subset$NPTHAL == 8] <- NA
 Data_Subset$NPTHAL[Data_Subset$NPTHAL == 9] <- NA
 Data_Subset$NPTHAL[Data_Subset$NPTHAL == -4] <- NA
+
+write.csv(Data_Subset, file = "Data_Subset.csv")
