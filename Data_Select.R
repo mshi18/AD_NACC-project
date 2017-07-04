@@ -62,3 +62,25 @@ Data_Subset$QUITSMOK[Data_Subset$QUITSMOK == 888] <- "No significant smoking his
 Data_Subset$QUITSMOK[Data_Subset$QUITSMOK == 999] <- "Unknown"
 Data_Subset$QUITSMOK[Data_Subset$QUITSMOK == -4] <- "Unknown"
 
+# Change 'ALCOHOL' numeric variable to be a factor, and replace invalid entries to 'NA'
+Data_Subset_ALCOHOL <- factor(Data_Subset$ALCOHOL,levels=c(0:2),labels=c("Absent","Active","Inactive"))
+Data_Subset_ALCOHOL[Data_Subset$ALCOHOL == 9] <- NA
+Data_Subset_ALCOHOL[Data_Subset$ALCOHOL == -4] <- NA
+
+# Change 'NACCUDSD' numeric variable to be a factor, and replace invalid entries to 'NA'
+Data_Subset_NACCUDSD <- factor(Data_Subset$NACCUDSD,levels=c(1:4),labels=c("Normal","Impaired","MCI","Dementia"))
+
+# Change 'CVHATT' numeric variable to be a factor, and replace invalid entries to 'NA'
+Data_Subset_CVHATT <- factor(Data_Subset$CVHATT,levels=c(0:2),labels=c("Absent","Active","Inactive"))
+Data_Subset_CVHATT[Data_Subset$CVHATT == 9] <- NA
+Data_Subset_CVHATT[Data_Subset$CVHATT == -4] <- NA
+
+# Change 'DIABETES' numeric variable to be a factor, and replace invalid entries to 'NA'
+Data_Subset_DIABETES <- factor(Data_Subset$DIABETES,levels=c(0:2),labels=c("Absent","Active","Inactive"))
+Data_Subset_DIABETES[Data_Subset$DIABETES == 9] <- NA
+Data_Subset_DIABETES[Data_Subset$DIABETES == -4] <- NA
+
+# Change 'CBSTROKE' numeric variable to be a factor, and replace invalid entries to 'NA'
+Data_Subset_CBSTROKE <- factor(Data_Subset$CBSTROKE,levels=c(0:2),labels=c("Absent","Active","Inactive"))
+Data_Subset_CBSTROKE[Data_Subset$CBSTROKE == 9] <- NA
+Data_Subset_CBSTROKE[Data_Subset$CBSTROKE == -4] <- NA
